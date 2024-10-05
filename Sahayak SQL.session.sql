@@ -1,1 +1,2 @@
-select * from profile;
+
+select * from users;
