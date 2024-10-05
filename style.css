@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding: 0;
+    background-color: pink;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.login{
+    align-items: center;
+    text-align: center;
+    margin: 50px auto;
+    font-size:25px;
+}
+#logbtn{
+    width:50px;
+    font-size: 15px;
+    background-color: aliceblue;
+}
