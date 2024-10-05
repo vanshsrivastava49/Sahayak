@@ -14,13 +14,12 @@ body {
     margin-bottom: 60px;
   }
   
-  h1{ 
-    font-size: 3.5em;
-  }
   
   .navbar h1 {
     margin: 0;
     padding: 0;
+    font-size: 3.5em;
+    color:#000;
     text-align: center;
   }
   
