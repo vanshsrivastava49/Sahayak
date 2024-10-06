@@ -4,7 +4,9 @@ body {
     background-size: 100% 100vh;
     background-position: 0 0;
   }
-  
+  h1{ 
+    font-size: 3.5em;
+  }
   .navbar {
     color: #fff;
     width:100%;
