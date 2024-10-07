@@ -26,6 +26,10 @@ public class RegisterController {
     public String showHome() {
         return "index";
     }
+    @GetMapping("/register")
+    public String showLogin() {
+        return "register";
+    }
 
     @PostMapping("/register")
     public String registerUser(@RequestParam String username, @RequestParam String password, Model model) {
