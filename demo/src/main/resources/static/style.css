@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-    background-image: url("back.jpg");
+    background-image: url("back3.png");
     background-size: 100% 100vh;
     background-position: 0 0;
   }
@@ -90,8 +90,8 @@ body {
   }
   
   .home-box, .align-box, .center-box {
-    width: 200px; /* adjust the width as needed */
-    height: 150px; /* adjust the height as needed */
+    width: 200px;
+    height: 150px;
     border: 1px solid #ccc;
     border-radius: 0.5em;
     padding: 1em;

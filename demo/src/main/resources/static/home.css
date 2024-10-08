@@ -8,7 +8,7 @@
     min-height: 130vh;
     background-size: cover;
     width: 100%;
-    background-image: linear-gradient(rgba(39, 104, 201, 0.288),rgba(11, 19, 49, 0.411)50%),url(1.jpg);
+    background-image: linear-gradient(rgba(39, 104, 201, 0.288),rgba(0, 119, 255, 0.29)50%),url(back.jpg);
     position: relative;
 }
 
@@ -128,10 +128,14 @@ nav img{
 /*----services-----*/
 
 .services{
-    width: 80%;
+    width: 100%;
     margin: auto;
     text-align: center;
     padding-top: 100px;
+    background-image:url(../white.jpg);
+    position: relative;
+    background-size: cover;
+    min-height: 65vh;
 
 }
 
@@ -139,13 +143,9 @@ h1{
     font-size: 36px;
     font-weight: 600;
 }
-h2{
-    font-size: 30px;
-    font-weight: 600;
-}
 
 p{
-    color: #777;
+    color: #000000;
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
@@ -160,13 +160,14 @@ p{
 
 .servicecol{
     flex-basis: 31%;
-    background: #fff3f3;
+    background: #00a2ff55;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
     box-sizing: border-box;
     transition: 0.5s;
 }
+
 
 h3{
     text-align: center;
@@ -175,16 +176,20 @@ h3{
 }
 
 .servicecol:hover{
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 2);
+    background-color: #006aff84;
 }
 
 /*---hospital----*/
 
 .hospital{
-    width:80%;
+    width:100%;
     margin: auto;
     text-align: center;
     padding-top: 50px;
+    background-image: url(../back3.png);
+    position: relative;
+    background-size: cover;
 }
 
 .hospitalcol{
@@ -193,6 +198,7 @@ h3{
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 2);
     
 }
 

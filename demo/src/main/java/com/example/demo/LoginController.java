@@ -28,19 +28,15 @@ public class LoginController {
                 ResultSet rs = stmt.executeQuery();
 
                 if (rs.next()) {
-                    // User exists, now check password (assuming passwords are hashed)
-                    String storedPassword = rs.getString("password"); // Get the hashed password
+                    String storedPassword = rs.getString("password");
                     if (BCrypt.checkpw(password, storedPassword)) {
-                        // Password matches, create session
                         HttpSession session = request.getSession();
                         session.setAttribute("username", username);
-                        response.sendRedirect("welcome.jsp"); // Redirect to welcome page
+                        response.sendRedirect("welcome.jsp");
                     } else {
-                        // Invalid password
                         response.sendRedirect("register.html?error=Invalid credentials");
                     }
                 } else {
-                    // Username not found
                     response.sendRedirect("register.html?error=Invalid credentials");
                 }
             }

@@ -25,16 +25,14 @@ public class LoginServlet extends HttpServlet {
             String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
             try (PreparedStatement stmt = connection.prepareStatement(sql)) {
                 stmt.setString(1, username);
-                stmt.setString(2, password); // Use hashed passwords in a real app
+                stmt.setString(2, password);
 
                 ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {
-                    // User found, create session
                     HttpSession session = request.getSession();
                     session.setAttribute("username", username);
-                    response.sendRedirect("welcome.jsp"); // Redirect to a welcome page
+                    response.sendRedirect("welcome.jsp");
                 } else {
-                    // User not found
                     response.sendRedirect("register.html?error=Invalid credentials");
                 }
             }
