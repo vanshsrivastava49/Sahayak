@@ -2,5 +2,20 @@
     "java.compile.nullAnalysis.mode": "automatic",
     "java.debug.settings.onBuildFailureProceed": true,
     "java.configuration.updateBuildConfiguration": "automatic",
-    "sqltools.connections": []
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "127.0.0.1",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "Sahayak SQL",
+            "database": "sahayak",
+            "username": "root",
+            "connectionTimeout": 20
+        }
+    ]
 }

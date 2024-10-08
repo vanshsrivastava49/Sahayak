@@ -35,12 +35,12 @@ public class RegisterController {
     public String registerUser(@RequestParam String username, @RequestParam String password, Model model) {
         if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
             model.addAttribute("message", "Username and password cannot be empty.");
-            return "result";
+            return "login";
         }
         String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
         jdbcTemplate.update(sql, username, password);
         model.addAttribute("message", "User registered successfully!");
-        return "result";
+        return "login";
     }
     @GetMapping("/profile")
     public String showProfileForm() {
