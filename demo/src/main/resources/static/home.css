@@ -132,7 +132,7 @@ nav img{
     margin: auto;
     text-align: center;
     padding-top: 100px;
-    background-image:url(../white.jpg);
+    background-image:url(white.jpg);
     position: relative;
     background-size: cover;
     min-height: 65vh;
@@ -187,7 +187,7 @@ h3{
     margin: auto;
     text-align: center;
     padding-top: 50px;
-    background-image: url(../back3.png);
+    background-image: url(back3.png);
     position: relative;
     background-size: cover;
 }
