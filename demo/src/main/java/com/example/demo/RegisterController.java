@@ -28,19 +28,19 @@ public class RegisterController {
     }
     @GetMapping("/register")
     public String showLogin() {
-        return "register";
+        return "result";
     }
 
     @PostMapping("/register")
     public String registerUser(@RequestParam String username, @RequestParam String password, Model model) {
         if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
             model.addAttribute("message", "Username and password cannot be empty.");
-            return "login";
+            return "result";
         }
         String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
         jdbcTemplate.update(sql, username, password);
         model.addAttribute("message", "User registered successfully!");
-        return "login";
+        return "result";
     }
     @GetMapping("/profile")
     public String showProfileForm() {
