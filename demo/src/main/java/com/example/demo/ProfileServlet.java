@@ -15,6 +15,7 @@ public class ProfileServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/sahayak";
     private static final String DB_USER = "root";
     private static final String DB_PASS = "Luck0409@";
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         String age = request.getParameter("age");
