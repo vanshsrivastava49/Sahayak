@@ -56,7 +56,7 @@ public String registerUser (@RequestParam String username, @RequestParam String 
     @PostMapping("/profile")
     public String userProfile(@RequestParam String name, @RequestParam String age,@RequestParam String gender, @RequestParam String disease, Model model) {
         if (name == null || name.isEmpty() || age == null || age.isEmpty()) {
-            model.addAttribute("message", "Name and age cannot be empty.");
+            model.addAttribute("", "Name and age cannot be empty.");
             return "result";
         }
         String sql = "INSERT INTO profile (name, age, gender, disease) VALUES (?, ?, ?, ?)";
