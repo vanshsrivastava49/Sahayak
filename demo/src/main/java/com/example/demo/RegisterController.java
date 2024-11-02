@@ -18,17 +18,13 @@ public class RegisterController {
     public String showForm() {
         return "index";
     }
-    @GetMapping("/login")
-    public String showRegister() {
-        return "login";
-    }
     @GetMapping("/index")
     public String showHome() {
         return "index";
     }
     @GetMapping("/register")
-    public String showLogin() {
-        return "result";
+    public String showRegister() {
+        return "register";
     }
 
     @PostMapping("/register")

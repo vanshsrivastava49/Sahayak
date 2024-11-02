@@ -1,50 +1,34 @@
 package com.example.demo;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import org.mindrot.jbcrypt.BCrypt;
-
-@WebServlet("/login")
+@Controller
 public class LoginController {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/sahayak";
-    private static final String DB_USER = "root";
-    private static final String DB_PASS = "Luck0409@";
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
-            String sql = "SELECT * FROM users WHERE username = ?";
-            try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-                stmt.setString(1, username);
-                ResultSet rs = stmt.executeQuery();
-
-                if (rs.next()) {
-                    String storedPassword = rs.getString("password");
-                    if (BCrypt.checkpw(password, storedPassword)) {
-                        HttpSession session = request.getSession();
-                        session.setAttribute("username", username);
-                        response.sendRedirect("welcome.jsp");
-                    } else {
-                        response.sendRedirect("register.html?error=Invalid credentials");
-                    }
-                } else {
-                    response.sendRedirect("register.html?error=Invalid credentials");
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("register.html?error=Database error");
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+    @GetMapping("/login")
+    public String showLogin() {
+        return "login";
+    }
+    @PostMapping("/login")
+    public String loginUser(@RequestParam String username, @RequestParam String password, Model model) {
+        if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
+            model.addAttribute("message", "Username and password cannot be empty.");
+            return "result";
         }
+        String sql = "SELECT COUNT(*) FROM users WHERE username = ? AND password = ?";
+        int count = jdbcTemplate.queryForObject(sql, Integer.class, username, password);
+        if (count == 0) {
+            model.addAttribute("message", "Invalid username or password.");
+            return "result";
+        }
+        model.addAttribute("message", "Login successful!");
+        return "result";
     }
 }
-

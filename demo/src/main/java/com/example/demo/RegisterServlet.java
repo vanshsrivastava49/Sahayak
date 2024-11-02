@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<h2>User registered successfully!</h2>");
-        out.println("<a href='index.html'>Go back</a>");
+        out.println("<a href='index.html'>Home Page</a>");
     }
 }
 
