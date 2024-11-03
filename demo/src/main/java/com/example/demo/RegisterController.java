@@ -25,7 +25,18 @@ public class RegisterController {
     public String showRegister() {
         return "register";
     }
-
+    @GetMapping("/checkout-pa")
+    public String showCheckoutpa() {
+        return "checkout-pa";
+    }
+    @GetMapping("/checkout-ws")
+    public String showCheckoutws() {
+        return "checkout-ws";
+    }
+    @GetMapping("/checkout-fn")
+    public String showCheckoutfn() {
+        return "checkout-fn";
+    }
     @PostMapping("/register")
 public String registerUser (@RequestParam String username, @RequestParam String password, Model model) {
     if (username == null || username.isEmpty() || password == null || password.isEmpty()) {

@@ -127,7 +127,7 @@ nav img{
 
 /*----services-----*/
 
-.services{
+#services{
     width: 100%;
     margin: auto;
     text-align: center;
@@ -238,3 +238,15 @@ h3{
     bottom: 49%;
     opacity: 1;
 }
+.service-btn{
+    text-decoration: none;
+    color:blue;
+    transition: color 0.3s ease;
+  }
+  .service-btn:hover{
+    color:black;
+    font-size: 14px;
+  }
+  html{
+    scroll-behavior: smooth;
+  }

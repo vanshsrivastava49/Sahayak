@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css"> <!-- Link to your CSS -->
+    <link rel="icon" type="image/png" href="../4.png">
+    <title>Checkout - Sahayak</title>
+</head>
+<body>
+    <h1 style="text-align:center">Sahayak</h1>
+    <div class="navbar">
+        <a href="/index">Home</a>
+        <a href="/login">Login</a> 
+        <a href="#about-us">About Us</a>
+    </div>
+
+    <main>
+        <h2 style="text-align:center">Checkout</h2>
+        <form action="/process-payment" method="POST">
+            <label for="service">Service:</label>
+            <input type="text" id="service" name="service" value="Wheelchair Service" readonly>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" value="1599" readonly>
+            <label for="upi-id">UPI ID:</label>
+            <input type="text" id="upi-id" name="upiId" placeholder="your-upi-id@bank" required>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
+            <button type="submit">Pay Now</button>
+        </form>
+    </main>
+</body>
+</html>
