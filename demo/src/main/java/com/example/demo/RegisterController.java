@@ -70,4 +70,5 @@ public String registerUser (@RequestParam String username, @RequestParam String 
         model.addAttribute("message", "Profile details saved successfully!");
         return "result";
     }
+    
 }
